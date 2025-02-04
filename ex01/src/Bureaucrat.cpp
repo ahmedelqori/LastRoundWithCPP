@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:56:34 by ael-qori          #+#    #+#             */
-/*   Updated: 2025/02/03 14:22:35 by ael-qori         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:13:15 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,12 @@ std::ostream& operator<<(std::ostream& os, Bureaucrat b)
 {
     os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
     return os; 
+}
+
+void        Bureaucrat::signForm(Form const &f)
+{
+    if (_grade <= f.getSignedGrade())
+        std::cout << _name << " signed "<< f.getName()<<std::endl;
+    else
+        std::cout << _name << " couldn\'t sign "<< f.getName()<< " because the grade is too low : "<< _grade <<std::endl;
 }

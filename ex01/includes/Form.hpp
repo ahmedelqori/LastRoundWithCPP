@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 14:29:57 by ael-qori          #+#    #+#             */
-/*   Updated: 2025/02/03 14:51:23 by ael-qori         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:11:17 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include <exception>
+
+class Bureaucrat;
+
 class Form
 {
     private:
@@ -37,7 +40,6 @@ class Form
         int         getExecuteGrade() const;
 
         void        beSigned(Bureaucrat const &copy);
-        void        signForm();
 
         class GradeTooHighException: public std::exception
         {
@@ -52,7 +54,7 @@ class Form
         };
 };
 
-std::ostream& operator<<(std::ostream& os, Form f);
+std::ostream& operator<<(std::ostream& os, Form &f);
 
 
 #endif

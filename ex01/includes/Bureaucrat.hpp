@@ -6,7 +6,7 @@
 /*   By: ael-qori <ael-qori@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 20:31:25 by ael-qori          #+#    #+#             */
-/*   Updated: 2025/02/03 14:19:14 by ael-qori         ###   ########.fr       */
+/*   Updated: 2025/02/04 21:11:27 by ael-qori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -44,6 +47,7 @@ class Bureaucrat
             public:
                 const char* what() const throw();
         };
+        void        signForm(Form const &f);
 };
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat b);
